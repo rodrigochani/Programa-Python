@@ -46,13 +46,13 @@ class MiVentana(QDialog):
 
         # Carpeta de descarga
         if numero_padron or archivo_seleccionado:
-            carpeta_descarga = os.path.join('C:/Users/Desktop/Desktop/Convocatoria 2022/', nombre_plan)
+            carpeta_descarga = os.path.join('C:/Users/.../', nombre_plan)
             # Si la carpeta no existe, crearla
         if not os.path.exists(carpeta_descarga):
             os.makedirs(carpeta_descarga)
 
                 # Ruta completa del archivo a descargar
-        ruta_descarga = f'C:/Users/Desktop/Desktop/Convocatoria 2022/{nombre_plan}/padron_{numero_padron}.kml'
+        ruta_descarga = f'C:/Users/.../'/{nombre_plan}/padron_{numero_padron}.kml'
 
         try:
             # Descargar el archivo
@@ -75,7 +75,7 @@ class MiVentana(QDialog):
         archivo_interseccion = ruta_kml if ruta_kml else self.line_edit2.text()
 
         # Asumiendo que tienes otro archivo con el que realizar la intersección
-        archivo_base = 'D:/OTBN - Rodrigo/Otros/Capas base/OTBN_Tucumán_postprocesado y unificado/OTBN_postprocesado_posgar98.shp'
+        archivo_base = 'D:/.../Archivo.shp'
         
         # Intersección
         inter_result = processing.run("qgis:intersection", {
@@ -181,7 +181,7 @@ class MiVentana(QDialog):
         
         if dissolved_unique_with_area :
             # Guardar el archivo resultante en formato KML
-            output_file3 = f'C:/Users/Desktop/Desktop/Convocatoria 2022/{nombre_plan}/{nombre_plan}_dis_Plan.kml'
+            output_file3 = f'C:/.../{nombre_plan}/{nombre_plan}_dis_Plan.kml'
             # Guardamos el resultado como KML
             QgsVectorFileWriter.writeAsVectorFormat(dissolved_unique_with_area['OUTPUT'], output_file3, "utf-8", dissolved_unique_with_area['OUTPUT'].crs(), "kml")
             print(f"Resultado guardado en {output_file3}")
